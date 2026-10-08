@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Your Name — Role</title>
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Your Name" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="canonical" href="https://example.com" />
+
+  <link rel="stylesheet" href="style.css" />
+  <!-- About 페이지는 첫 화면부터 이미지·푸터 숨김, 인덱스는 Threshold·카운터 숨김 (깜빡임 방지) -->
+  <script>
+    if (new URLSearchParams(location.search).get("page") === "about") document.documentElement.classList.add("about-mode");
+    if (!new URLSearchParams(location.search).get("page")) document.documentElement.classList.add("home-mode");
+  </script>
+
+  <!-- SEO & Social Media Metadata (OpenGraph) — [TEMPLATE] 아래 값을 모두 바꾼다 -->
+  <meta name="description" content="One or two sentences that describe the work. Shown in search results and link previews." />
+  <meta name="keywords" content="Your Name, role, keyword one, keyword two" />
+  <meta name="author" content="Your Name" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Your Name — Role" />
+  <meta property="og:description" content="One or two sentences that describe the work. Shown in search results and link previews." />
+  <meta property="og:image" content="https://example.com/og.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Photograph by Your Name" />
+  <meta property="og:url" content="https://example.com" />
+  <meta property="og:site_name" content="Your Name" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="ko_KR" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Your Name — Role" />
+  <meta name="twitter:description" content="One or two sentences that describe the work. Shown in search results and link previews." />
+  <meta name="twitter:image" content="https://example.com/og.jpg" />
+  <meta name="twitter:image:alt" content="Photograph by Your Name" />
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Your Name",
+    "url": "https://example.com",
+    "image": "https://example.com/og.jpg",
+    "jobTitle": "Role",
+    "email": "hello@example.com",
+    "sameAs": [
+      "https://www.instagram.com/your-handle/"
+    ],
+    "description": "One or two sentences that describe the work."
+  }
+  </script>
+</head>
+
+<!-- data-owner / data-role: 프로젝트 PDF 표지에 들어가는 이름과 직함 (영문·숫자만. 한글은 fonts/ 서브셋에 글자를 추가해야 함) -->
+<body data-owner="Your Name" data-role="Role">
+  <!-- Visually hidden H1 for SEO -->
+  <h1
+    style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0;">
+    Your Name — Role</h1>
+
+  <!-- 이전 페이지 이동 화살표 (home, 시리즈 페이지, about 제외 페이지에서만 표시) -->
+  <a id="back-nav" class="back-nav" href="javascript:history.back()" style="display:none;">←</a>
+
+  <!-- PC 전용 레이아웃 -->
+  <div id="canvas-container"></div>
+
+  <!-- 에디토리얼 페이지 우측 상단 크레딧 박스 (?page=editorial1). 에디토리얼을 더 만들면 박스를 복제하고 script.js의 creditBoxEditorial을 늘린다 -->
+  <div id="credit-box-editorial1" class="credit-box-container hidden">
+    <div class="credit-section title-section">
+      <div class="credit-main-title">Editorial Title</div>
+    </div>
+    <div class="credit-section pub-section">
+      <div class="credit-row"><span class="role"></span> <span class="name"><a href="https://example.com"
+            target="_blank">Publication</a></span></div>
+      <div class="credit-row"><span class="role"></span> <span class="name">Month Year</span></div>
+    </div>
+    <div class="credit-section crew-section">
+      <div class="credit-row"><span class="role">Photographer</span> <span class="name">Your Name</span></div>
+      <div class="credit-row"><span class="role">Editor</span> <span class="name">Editor Name</span></div>
+      <div class="credit-row"><span class="role">Stylist</span> <span class="name">Stylist Name</span></div>
+      <div class="credit-row"><span class="role">Hair</span> <span class="name">Hair Name</span></div>
+      <div class="credit-row"><span class="role">Make Up</span> <span class="name">Make Up Name</span></div>
+    </div>
+  </div>
+
+  <!-- 좌측 상단 정보 (모바일 m-info와 동일 레이아웃, mobile.js에도 같은 내용이 있음) — 항상 최상위 레이어 -->
+  <div class="d-info">
+    <p class="name"><a href="./" id="footer-home">Your Name</a></p>
+    <div class="spacer"></div>
+    <p>Role</p>
+    <p>word<br>word<br>word</p>
+    <div class="spacer"></div>
+    <p>City, Country</p>
+    <div class="spacer"></div>
+    <div class="spacer"></div>
+    <div class="spacer"></div>
+    <a href="download/PortfolioCV.zip" download="PortfolioCV.zip" class="d-link">→ portfolio / cv</a>
+    <div class="spacer"></div>
+    <p><a href="mailto:hello@example.com" class="d-link">hello@example.com</a><br>+00 00 0000 0000</p>
+  </div>
+
+  <!-- 우측 오버레이 메뉴: Works / About — 상단은 좌상단 텍스트, 좌측은 Threshold와 정렬 -->
+  <nav class="d-nav">
+    <div class="d-nav-item d-nav-works">
+      <a href="#" class="d-nav-trigger" onclick="return false;">Works</a>
+      <div class="d-panel">
+        <div class="d-works">
+          <div class="d-group">
+            <a href="?page=all" class="d-row"><span>(index)</span></a>
+          </div>
+          <div class="d-group">
+            <a href="?page=alpha" class="d-row"><span>Series Alpha</span><span>2025 -</span></a>
+            <a href="?page=beta" class="d-row"><span>Series Beta</span><span>2025 -</span></a>
+            <a href="?page=gamma" class="d-row"><span>Series Gamma</span><span>2024</span></a>
+            <a href="?page=delta" class="d-row"><span>Series Delta</span><span>2021 -</span></a>
+          </div>
+          <div class="d-group">
+            <a href="?page=project1" class="d-row"><span>Project One</span><span>2026</span></a>
+            <a href="?page=project2" class="d-row"><span>Project Two</span><span>2025</span></a>
+            <a href="?page=project3" class="d-row"><span>Project Three</span><span>2024</span></a>
+          </div>
+          <div class="d-group d-group-wide">
+            <a href="?page=editorial1" class="d-row"><span>Editorial Title</span><span>2026</span><span>Publication</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="d-nav-item d-nav-about">
+      <a href="?page=about" class="d-nav-trigger">About</a>
+      <div class="d-panel">
+        <div class="d-about">
+          <!-- 키워드 hover → 화면 중앙에 이미지 (data-img = 시리즈-번호), data-full은 브라우저 전체 크기 (가로 사진만) -->
+          <p>(EN)</p>
+          <p>Write two or three sentences about the <span class="d-word" data-img="alpha-01">work</span>.
+            Move the cursor over a highlighted <span class="d-word" data-img="beta-03">word</span> and a photograph
+            appears in the center of the screen.</p>
+          <p class="d-about-last">Keep each paragraph short. A <span class="d-word" data-img="alpha-02" data-full>landscape</span>
+            photograph can fill the whole window, a <span class="d-word" data-img="delta-02">portrait</span> one cannot.</p>
+          <p>(KR)</p>
+          <p>작업에 대한 설명을 두세 문장으로 쓴다. 강조된 <span class="d-word" data-img="beta-03">단어</span> 위에 커서를 올리면
+            사진이 화면 중앙에 뜬다.</p>
+          <p>문단은 짧게 쓴다. <span class="d-word" data-img="gamma-01" data-full>가로 사진</span>은 창 전체를 채울 수 있다.</p>
+          <div class="d-other-webs">
+            <p>(other webs)</p>
+            <a class="other-link" href="https://example.com">example.com</a><br>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 프로젝트 PDF 다운로드 (우측 상단) -->
+  <a id="d-pdf" class="d-pdf" href="#" role="button">↓ pdf</a>
+
+  <footer>
+    <div class="footer-controls">
+      Threshold:
+      <button id="decrease-threshold">-</button>
+      <span id="threshold-value">0160</span>
+      <button id="increase-threshold">+</button>
+    </div>
+
+    <div class="footer-right" id="image-counter">0000 / 0000</div>
+  </footer>
+
+  <!-- About 키워드 hover 이미지 (화면 중앙 / 브라우저 전체) -->
+  <div id="word-image" aria-hidden="true"><img alt="" /></div>
+
+  <!-- 전체 화면 뷰어 -->
+  <div id="fullscreen-container">
+    <img id="fullscreen-img" />
+
+    <!-- 인덱스2 오버레이 -->
+    <div id="fs-index2-overlay">
+      <div id="fs-index2-grid"></div>
+    </div>
+
+    <!-- 내비게이션 버튼 (박스형) -->
+    <div id="fs-controls">
+      <button id="fs-prev" class="fs-link">Prev</button>
+      <div class="fs-close-wrapper">
+        <button id="fs-close" class="fs-link">Close</button>
+        <button id="fs-index-btn" class="fs-link-index">(index)</button>
+      </div>
+      <button id="fs-next" class="fs-link">Next</button>
+    </div>
+  </div>
+
+  <!-- Hidden Links for SEO Crawlers -->
+  <div style="display:none;">
+    <nav>
+      <ul>
+        <li><a href="?page=alpha">Series Alpha</a></li>
+        <li><a href="?page=beta">Series Beta</a></li>
+        <li><a href="?page=gamma">Series Gamma</a></li>
+        <li><a href="?page=delta">Series Delta</a></li>
+        <li><a href="?page=project1">Project One</a></li>
+        <li><a href="?page=project2">Project Two</a></li>
+        <li><a href="?page=project3">Project Three</a></li>
+        <li><a href="?page=editorial1">Editorial Title</a></li>
+        <li><a href="?page=about">about</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- PC용 스크립트 -->
+  <script src="log.js"></script>
+  <script src="email-gate.js"></script>
+  <script src="image-titles.js"></script>
+  <script src="script.js"></script>
+  <script src="mobile.js"></script>
+  <script src="hover-contrast.js"></script>
+  <script src="pdf.js"></script>
+  <script src="series-video.js"></script>
+</body>
+
+</html>
