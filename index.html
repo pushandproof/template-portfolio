@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
   <title>Your Name — Role</title>
   <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
   <link rel="shortcut icon" href="favicon.ico" />
@@ -59,6 +59,7 @@
     "description": "One or two sentences that describe the work."
   }
   </script>
+<style>html{touch-action:manipulation}</style><script>/* pp-nozoom: no pinch or double-tap zoom (iOS ignores user-scalable=no) */document.addEventListener("gesturestart",function(e){e.preventDefault()});document.addEventListener("touchmove",function(e){if(e.touches&&e.touches.length>1)e.preventDefault()},{passive:false});</script>
 </head>
 
 <!-- data-owner / data-role: 프로젝트 PDF 표지에 들어가는 이름과 직함 (영문·숫자만. 한글은 fonts/ 서브셋에 글자를 추가해야 함) -->
